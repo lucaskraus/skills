@@ -8,11 +8,8 @@ Each skill lives in its own folder with a `SKILL.md` inside (plus any supporting
 
 ```
 skills/
-├── open-pr/
+├── skill-name/
 │   ├── SKILL.md
-│   └── TEMPLATE.md
-└── address-pr-comment/
-    └── SKILL.md
 ```
 
 ## Skills
