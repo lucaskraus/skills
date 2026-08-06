@@ -15,7 +15,9 @@ All `gh` commands in this skill run under the account that matches the repo's gi
 
 Fetch the comment via `gh api` from the link (review comments live at `repos/{owner}/{repo}/pulls/comments/{id}`; issue comments at `repos/{owner}/{repo}/issues/comments/{id}`). Capture its body, the file and line it anchors to, and the surrounding review thread if there is one.
 
-**Done when:** the comment body and its anchor (file, line, thread) are in hand.
+Also capture the PR's head branch and check out that branch if it isn't the current one — every later step must run on the PR's branch, or the fix lands in the wrong place.
+
+**Done when:** the comment body and its anchor (file, line, thread) are in hand, and the working tree is on the PR's head branch.
 
 ### 2. Investigate
 
@@ -52,7 +54,7 @@ When the fix touched code, run the repo's own lint, prettier/format, and test co
 Everything stays local: leave the fix uncommitted and the reply unposted — the user triggers both. Never add yourself as co-author on any commit.
 
 1. Summarize what changed to address the comment (or why nothing changed).
-2. Draft a suggested reply: objective and short — a couple of sentences, not an essay. Natural human language, no slang, markdown syntax when mentioning files (`` `path/to/file.ts` ``). For a Wrong verdict, a respectful explanation grounded in the code; for Valid, what was changed.
+2. Draft a suggested reply: objective and short — a couple of sentences, not an essay. Natural human language, no slang, markdown syntax when mentioning files (`` `path/to/file.ts` ``). Write plain sentences separated by periods — dashes (em, en, or hyphen-as-punctuation) and semicolons read as AI-generated, so they never appear in the reply. For a Wrong verdict, a respectful explanation grounded in the code; for Valid, what was changed.
 3. Ask the user whether to post the reply and whether to commit and push the fix. Only do either after they say yes.
 
 **Done when:** summary and suggested reply are shown, and the user has answered on posting/committing.
