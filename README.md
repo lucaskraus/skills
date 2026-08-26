@@ -12,7 +12,16 @@ skills/
 │   ├── SKILL.md
 ```
 
-## Skills
+## Installing a skill
 
-- **[open-pr](open-pr/SKILL.md)** — open a pull request with the GitHub CLI, checking that the gh account matches the repo's git identity, and following the repo's PR template (or a simple fallback).
-- **[address-pr-comment](address-pr-comment/SKILL.md)** — fetch a PR review comment, validate the reviewer's point against the codebase, fix it when it holds, and draft a reply.
+Install a skill from this repo with the [skills](https://skills.sh) CLI:
+
+```sh
+npx skills add lucaskraus/skills --skill [skill-name]
+```
+
+Replace `[skill-name]` with the name of the skill folder you want. Run it without `--skill` to pick from all skills in the repo:
+
+```sh
+npx skills add lucaskraus/skills
+```
