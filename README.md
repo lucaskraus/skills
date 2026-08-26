@@ -17,11 +17,7 @@ skills/
 Install a skill from this repo with the [skills](https://skills.sh) CLI:
 
 ```sh
-npx skills add lucaskraus/skills --skill [skill-name]
-```
-
-Replace `[skill-name]` with the name of the skill folder you want. Run it without `--skill` to pick from all skills in the repo:
-
-```sh
 npx skills add lucaskraus/skills
 ```
+
+It fetches the repo directly from GitHub (no clone needed) and lets you pick which skills to install.
