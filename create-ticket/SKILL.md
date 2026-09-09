@@ -51,7 +51,7 @@ The acceptance criteria as a task list: each item is a checkbox the implementer 
 **Additional information (purple)**
 Documentation links for every external resource the task touches, plus any related tickets. Put the content inside an info panel of type Note on platforms that have one (Jira's ADF `panel` with `panelType: "note"`); a plain list elsewhere. Omit the section when there is nothing to add.
 
-Title: `[PREFIX] - [summary]`. The prefix is the knowledge field: `BE` for backend, `FE` for frontend, `DEVOPS` for infrastructure and pipelines. Use a different prefix only when the user names one in the prompt, or when the task clearly fits none of the three (rare); in that case propose a prefix and confirm it in step 4. The summary is short, imperative, and names the deliverable, e.g. "[FE] - Add transactions list with pagination and filters".
+Title: `[PREFIX] [summary]`. The prefix is the knowledge field: `BE` for backend, `FE` for frontend, `DEVOPS` for infrastructure and pipelines. Use a different prefix only when the user names one in the prompt, or when the task clearly fits none of the three (rare); in that case propose a prefix and confirm it in step 4. The summary is short, imperative, and names the deliverable, e.g. "[FE] - Add transactions list with pagination and filters".
 
 **Done when:** every section is filled or deliberately omitted, every item in Valid if is verifiable, every path in Suggested solution exists in the repository or is clearly marked as new, and the text contains no em dashes.
 
