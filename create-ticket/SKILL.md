@@ -49,7 +49,7 @@ Technical language, grounded in the repository. It is a suggestion, so describe 
 The acceptance criteria as a task list: each item is a checkbox the implementer ticks when it holds. Use the platform's native task list block (Jira has one, Linear and Notion render `- [ ]` markdown); fall back to a bulleted list only where no checkbox exists. Each item is a condition someone can verify: follows the repository pattern for X, lists all Y by page and pageSize, unit tests cover the new components, the user can filter by Z. Derive the full list from the prompt and the parent Epic or Story.
 
 **Additional information (purple)**
-Documentation links for every external resource the task touches, plus any related tickets. Omit the section when there is nothing to add.
+Documentation links for every external resource the task touches, plus any related tickets. Put the content inside an info panel of type Note on platforms that have one (Jira's ADF `panel` with `panelType: "note"`); a plain list elsewhere. Omit the section when there is nothing to add.
 
 Title: `[PREFIX] - [summary]`. The prefix is the knowledge field: `BE` for backend, `FE` for frontend, `DEVOPS` for infrastructure and pipelines. Use a different prefix only when the user names one in the prompt, or when the task clearly fits none of the three (rare); in that case propose a prefix and confirm it in step 4. The summary is short, imperative, and names the deliverable, e.g. "[FE] - Add transactions list with pagination and filters".
 
@@ -63,7 +63,7 @@ Show the title and full description. Apply the requested edits before creating.
 
 ### 5. Create the ticket
 
-1. Fetch the platform's content format guide when it offers one, then convert the description to that format, applying the section colors and the Valid if task list where supported.
+1. Fetch the platform's content format guide when it offers one, then convert the description to that format, applying the section colors, the Valid if task list, and the Additional information note panel where supported.
 2. Create the ticket in the confirmed project with the confirmed issue type and parent.
 3. Report the ticket key and URL.
 
