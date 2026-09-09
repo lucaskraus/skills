@@ -32,16 +32,21 @@ Hard rules for every ticket:
 
 ### 3. Write the description
 
-Use exactly these four sections, in this order. The color in parentheses is the section heading color on platforms that support colored text (Jira does, check the platform's content format guide). On platforms without colors, use plain headings.
+Use exactly these four sections, in this order, each as a Heading 2. The color in parentheses is the section heading color on platforms that support colored text (Jira does, check the platform's content format guide). On platforms without colors, use plain headings.
 
 **Summary (yellow)**
 Business language. What should be done, what problem it solves, and what improves once it ships. State the business rules that apply. No technical terms.
 
 **Suggested solution (light blue)**
-Technical language, grounded in the repository. Name the files to create or change, the endpoint and its contract, validation, and for frontend work the props contract of the screen or component and the schemas involved. It is a suggestion, so keep it to the shape of the solution, not a full implementation.
+Technical language, grounded in the repository. It is a suggestion, so describe the shape of the solution, not a full implementation. Split it into these four Heading 3 sub-sections, in this order, and omit a sub-section when it is empty. One item per line, and the file, symbol, endpoint, or schema name in inline code, followed by a colon and what it does:
+
+- **New files.** One line per file to create, in data-flow order (schema or model, service, endpoint or request layer, UI). Name the existing file it mirrors when one exists, e.g. `- \`pages/lesson-plan-create.page.tsx\`: thin page like \`school-create.page.tsx\`, renders the builder`.
+- **Modified files.** One line per existing file to change and the change itself.
+- **Interfaces, schemas and validation.** One line per interface the work exposes: endpoint (method, path, request, response, errors), component props, hook signature, schema. Field rules go with their schema, and every field is named with its own rule, never summarised as "the rest", e.g. `- \`lessonPlanDraftSchema\`: \`title\` required, max 50; \`overview\` optional, max 500; \`category\` optional enum`.
+- **Rules.** Behaviour the implementation must honour that is not tied to a single interface: state transitions, edge cases, permissions, what a sibling ticket in the same Epic covers instead.
 
 **Valid if... (orange)**
-The acceptance criteria as a checklist. Each item is a condition someone can verify: follows the repository pattern for X, lists all Y by page and pageSize, unit tests cover the new components, the user can filter by Z. Derive the full list from the prompt and the parent Epic or Story.
+The acceptance criteria as a task list: each item is a checkbox the implementer ticks when it holds. Use the platform's native task list block (Jira has one, Linear and Notion render `- [ ]` markdown); fall back to a bulleted list only where no checkbox exists. Each item is a condition someone can verify: follows the repository pattern for X, lists all Y by page and pageSize, unit tests cover the new components, the user can filter by Z. Derive the full list from the prompt and the parent Epic or Story.
 
 **Additional information (purple)**
 Documentation links for every external resource the task touches, plus any related tickets. Omit the section when there is nothing to add.
@@ -58,7 +63,7 @@ Show the title and full description. Apply the requested edits before creating.
 
 ### 5. Create the ticket
 
-1. Fetch the platform's content format guide when it offers one, then convert the description to that format, applying the section colors where supported.
+1. Fetch the platform's content format guide when it offers one, then convert the description to that format, applying the section colors and the Valid if task list where supported.
 2. Create the ticket in the confirmed project with the confirmed issue type and parent.
 3. Report the ticket key and URL.
 
